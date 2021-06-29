@@ -7,34 +7,21 @@ public class Hero : Entity
 {
     [SerializeField] private float speed = 3f;
     [SerializeField] private int health;
-
-    [SerializeField] private float jumpForce = 0.3f;
-
+    [SerializeField] private float jumpForce = 0.7f;
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite aliveHeart;
     [SerializeField] private Sprite deadHeart;
-
-
     private Rigidbody2D rb;
-    private Animator anim;
     private SpriteRenderer sprite;
     public SpriteRenderer AttackCircle;
     private bool isGrounded = false;
     public bool isAttacking = false;
     public bool isRecharged = true;
-
-
-
     private Vector2 pos;
-    //pos.y -= 1.0f;
-
-    //public Transform groundPos;
-
-
-
     public Transform attackPos;
     public float attackRange;
     public LayerMask enemy;
+    public Joystick joystick;
 
     public static Hero Instance { get; set; }
 
@@ -50,19 +37,17 @@ public class Hero : Entity
         health = lives;
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         isRecharged = true;
     }
     private void Update()
     {
         if (isGrounded && !isAttacking) State = States.idle;
-        if (Input.GetButton("Horizontal"))
+        if (!isAttacking && joystick.Horizontal != 0)
             Run();
-        if (Input.GetButton("Jump") && isGrounded)
-            Jump();
-        if (Input.GetButtonDown("Fire1"))
-            Attack();
+        // if (!isAttacking && joystick.Vertical > 0.5f && isGrounded)
+        //     Jump();
+
 
         if (health > lives)
             health = lives;
@@ -71,15 +56,14 @@ public class Hero : Entity
             if (i < health)
                 hearts[i].sprite = aliveHeart;
             else
-
                 hearts[i].sprite = deadHeart;
 
 
 
-            // if (i < lives)
-            //  hearts[i].enabled = true;
-            // else
-            //  hearts[i].enabled = false;
+            if (i < lives)
+                hearts[i].enabled = true;
+            else
+                hearts[i].enabled = false;
 
         }
     }
@@ -94,15 +78,19 @@ public class Hero : Entity
         if (isGrounded) State = States.Run;
 
 
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
+        Vector3 dir = transform.right * joystick.Horizontal;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
         sprite.flipX = dir.x < 0.0f;
     }
 
-    private void Jump()
+    public void Jump()
     {
-        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        isGrounded = false;
+        if (!isAttacking && isGrounded)
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+        //rb.velocity = Vector2.up * jumpForce;
     }
 
     private void CheckGround()
@@ -112,22 +100,6 @@ public class Hero : Entity
         isGrounded = collider.Length > 1;
 
     }
-
-    //private void OnDrawGizmosSelected()
-    // {
-    //    Gizmos.color = Color.green;
-    //    Gizmos.DrawWireSphere(pos, 0.3f);
-    // }
-    /*
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        isGrounded = true;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGrounded = false;
-    }
-    */
 
     public override void GetDamage()
     {
@@ -139,7 +111,7 @@ public class Hero : Entity
             Die();
         }
     }
-    private void Attack()
+    public void Attack()
     {
         if (isGrounded && isRecharged)
         {
@@ -155,11 +127,16 @@ public class Hero : Entity
     private void OnAttack()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
+
+
         for (int i = 0; i < colliders.Length; i++)
         {
             colliders[i].GetComponent<Entity>().GetDamage();
+            StartCoroutine(EnemyOnAttack(colliders[i]));
         }
+
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
@@ -180,6 +157,20 @@ public class Hero : Entity
     {
         yield return new WaitForSeconds(0.5f);
         isRecharged = true;
+    }
+    private IEnumerator EnemyOnAttack(Collider2D enemy)
+    {
+        SpriteRenderer enemyColor = enemy.GetComponentInChildren<SpriteRenderer>();
+
+        Debug.Log(enemyColor);
+        // меняет цвет
+        enemyColor.color = Color.red;
+
+        // ждем 0.2 сек
+        yield return new WaitForSeconds(0.5f);
+
+        // ставим старый цвет
+        enemyColor.color = new Color(1, 1, 1);
     }
 
 }

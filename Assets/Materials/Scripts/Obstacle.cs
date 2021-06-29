@@ -6,12 +6,12 @@ public class Obstacle : Entity
 {
     private void Start()
     {
-        lives = 1;
+        lives = 3;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == Hero.Instance.gameObject)
+        if (collision.gameObject == Hero.Instance.gameObject && lives > 0)
         {
             Hero.Instance.GetDamage();
         }

@@ -8,8 +8,6 @@ public class WalkingMonster : Entity
     private Vector3 dir;
     private SpriteRenderer sprite;
 
-
-
     private void Start()
     {
         dir = transform.right;
@@ -30,14 +28,12 @@ public class WalkingMonster : Entity
         }
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
     }
-    private void OnDrawGizmosSelected()
+    public void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position + transform.up * 0.5f + transform.right * dir.x * 0.4f, 0.01f);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position + transform.up * 0.5f + transform.right * dir.x * 0.5f, 0.2f);
         //Gizmos.color = Color.cyan;
         //Gizmos.DrawWireSphere(transform.position, 0.05f);
-
-
     }
 
     private void Update()
@@ -52,7 +48,6 @@ public class WalkingMonster : Entity
             lives--;
             Hero.Instance.GetDamage();
         }
-        if (lives < 1)
-            Die();
     }
 }
+

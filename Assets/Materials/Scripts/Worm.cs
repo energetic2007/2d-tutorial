@@ -17,10 +17,10 @@ public class Worm : Entity
         {
             Hero.Instance.GetDamage();
             lives--;
-            Debug.Log(" worm " + lives);
         }
-
-        if (lives < 1)
-            Die();
     }
+
 }
+
+
+

@@ -5,6 +5,14 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected int lives;
+    public Animator anim;
+    [SerializeField] Collider2D col;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
+    }
     public virtual void GetDamage()
     {
         lives--;
@@ -14,6 +22,15 @@ public class Entity : MonoBehaviour
 
     public virtual void Die()
     {
-        Destroy(this.gameObject);
+        anim.SetTrigger("death");
+        col.isTrigger = true;
+        gameObject.tag = "enemy_dead";
+        LevelController.Instance.EnemiesCount();
+
+        // Убирает из игры (если будет надо)
+        // Destroy(this.gameObject);
     }
 }
+
+
+
