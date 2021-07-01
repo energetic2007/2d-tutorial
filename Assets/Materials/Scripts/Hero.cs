@@ -103,7 +103,9 @@ public class Hero : Entity
 
     public override void GetDamage()
     {
+
         health -= 1;
+        State = States.damage;
         if (health == 0)
         {
             foreach (var h in hearts)
@@ -179,5 +181,7 @@ public enum States
     idle,
     Run,
     Jump,
-    Attack
+    Attack,
+    damage,
+    dead
 }

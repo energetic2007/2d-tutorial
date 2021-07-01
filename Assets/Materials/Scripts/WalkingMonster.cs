@@ -8,6 +8,10 @@ public class WalkingMonster : Entity
     private Vector3 dir;
     private SpriteRenderer sprite;
 
+    [SerializeField] float collisionX;
+    [SerializeField] float collisionY;
+    // private Rigidbody2D rb;
+
     private void Start()
     {
         dir = transform.right;
@@ -20,24 +24,28 @@ public class WalkingMonster : Entity
     }
     private void Move()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + transform.up * 0.5f + transform.right * dir.x * 0.5f, 0.01f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + transform.up * collisionY + transform.right * dir.x * collisionX, 0.1f);
         if (colliders.Length > 0)
         {
             dir *= -1f;
-            sprite.flipX = dir.x > 0.0f;
+            sprite.flipX = dir.x < 0.0f;
         }
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
     }
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position + transform.up * 0.5f + transform.right * dir.x * 0.5f, 0.2f);
-        //Gizmos.color = Color.cyan;
-        //Gizmos.DrawWireSphere(transform.position, 0.05f);
+        Gizmos.DrawWireSphere(transform.position + transform.up * collisionY + transform.right * dir.x * collisionX, 0.1f);
     }
 
     private void Update()
     {
+
+        if (lives == 0)
+        {
+            Debug.Log("LOL");
+        }
+
         Move();
     }
 
