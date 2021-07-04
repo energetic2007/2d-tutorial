@@ -57,9 +57,6 @@ public class Hero : Entity
                 hearts[i].sprite = aliveHeart;
             else
                 hearts[i].sprite = deadHeart;
-
-
-
             if (i < lives)
                 hearts[i].enabled = true;
             else
@@ -103,9 +100,9 @@ public class Hero : Entity
 
     public override void GetDamage()
     {
-
+        anim.SetTrigger("damage");
         health -= 1;
-        State = States.damage;
+
         if (health == 0)
         {
             foreach (var h in hearts)

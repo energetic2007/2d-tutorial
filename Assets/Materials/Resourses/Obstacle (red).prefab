@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3140927351732395538}
   m_Layer: 6
   m_Name: sprite
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

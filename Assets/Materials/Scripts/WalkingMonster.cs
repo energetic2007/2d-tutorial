@@ -10,12 +10,11 @@ public class WalkingMonster : Entity
 
     [SerializeField] float collisionX;
     [SerializeField] float collisionY;
-    // private Rigidbody2D rb;
-
+    [SerializeField] int setLives;
     private void Start()
     {
         dir = transform.right;
-        lives = 4;
+        lives = setLives;
     }
 
     private void Awake()
@@ -40,12 +39,6 @@ public class WalkingMonster : Entity
 
     private void Update()
     {
-
-        if (lives == 0)
-        {
-            Debug.Log("LOL");
-        }
-
         Move();
     }
 
@@ -53,7 +46,7 @@ public class WalkingMonster : Entity
     {
         if (collision.gameObject == Hero.Instance.gameObject)
         {
-            lives--;
+            Debug.Log(lives);
             Hero.Instance.GetDamage();
         }
     }

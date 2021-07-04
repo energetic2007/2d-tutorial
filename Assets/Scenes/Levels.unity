@@ -455,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -957,6 +957,8 @@ MonoBehaviour:
   levels:
   - {fileID: 1952535875}
   - {fileID: 779611296}
+  - {fileID: 1643885077}
+  - {fileID: 2018315426}
 --- !u!1001 &949923575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -982,7 +984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1115,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1338,7 +1340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.7800293, y: -52}
+  m_AnchoredPosition: {x: -5.78006, y: -52}
   m_SizeDelta: {x: -181.05, y: -250.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489471332
@@ -1631,6 +1633,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643885077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
+  m_PrefabInstance: {fileID: 275476762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1952535874 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1011586603735529173, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
@@ -1640,6 +1653,17 @@ RectTransform:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
   m_PrefabInstance: {fileID: 1011586605549511575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2018315426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
+  m_PrefabInstance: {fileID: 1021689946}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -2029,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 91543703991688290, guid: d6b886f756d08414790d7a196198d7ac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

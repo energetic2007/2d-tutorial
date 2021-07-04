@@ -14,13 +14,21 @@ public class LevelSelector : MonoBehaviour
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
         for (int i = 0; i < levels.Length; i++)
-            if (i + 1 > levelReached)
-                levels[i].interactable = true;
-        //levels[i].interactable = false;
+        {
+            if (i > levelReached - 1) levels[i].interactable = false;
+        }
     }
 
     public void Select(int numberInBuild)
     {
+        int currentLevel = numberInBuild - 1;
+
+        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+        if (levelReached < currentLevel) PlayerPrefs.SetInt("levelReached", currentLevel);
         SceneManager.LoadScene(numberInBuild);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
