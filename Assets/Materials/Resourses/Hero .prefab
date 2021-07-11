@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &428831682301007764
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   isAttacking: 0
   isRecharged: 1
   attackPos: {fileID: 428831683195305642}
-  attackRange: 2.07
+  attackRange: 1.08
   enemy:
     serializedVersion: 2
     m_Bits: 64

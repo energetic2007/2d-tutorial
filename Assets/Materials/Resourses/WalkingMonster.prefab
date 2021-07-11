@@ -117,7 +117,7 @@ MonoBehaviour:
   col: {fileID: 7212177644170360669}
   collisionX: 0.55
   collisionY: 0.5
-  lives: 4
+  setLives: 4
 --- !u!1 &7212177644523743972
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,35 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    private int enemiesOnScene;
     public static LevelController Instance { get; set; }
     public GameObject WinMenu;
+    public Text enemiesCountText;
+    private string _enemiesCountTextStart = "Enemies left: ";
     private void Awake()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         Debug.Log(enemies.Length);
         Instance = this;
+        enemiesCountText.text = _enemiesCountTextStart + enemies.Length.ToString();
 
     }
     public void EnemiesCount()
     {
-        // GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-        // enemiesOnScene = enemies.Length;
-        // Debug.Log("enemies " + enemiesOnScene);
+        int enemiesOnScene = GameObject.FindGameObjectsWithTag("enemy").Length;
 
-        // if (enemiesOnScene == 0)
-        // {
-        //     //Hero.Instance.Invoke("SetWinPanel", 1.1f);
+        enemiesCountText.text = _enemiesCountTextStart + enemiesOnScene.ToString();
 
-        //     Debug.Log("WIN WIN");
-        //     WinMenu.SetActive(true);
-        // }
-
-        if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+        if (enemiesOnScene == 0)
+        {
+            Debug.Log("WIN WIN");
             WinMenu.SetActive(true);
+        }
+
+        //if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+        //    WinMenu.SetActive(true);
 
 
     }
