@@ -11,6 +11,7 @@ public class Hero : Entity
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite aliveHeart;
     [SerializeField] private Sprite deadHeart;
+    [SerializeField] GameObject DeathMenu;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     public SpriteRenderer AttackCircle;
@@ -108,11 +109,12 @@ public class Hero : Entity
             foreach (var h in hearts)
                 h.sprite = deadHeart;
             Die();
+            DeathMenu.SetActive(true);
         }
     }
     public void Attack()
     {
-        if (isGrounded && isRecharged)
+        if (isRecharged)
         {
             State = States.Attack;
             AttackCircle.enabled = true;
