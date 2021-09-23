@@ -6679,8 +6679,8 @@ Tilemap:
   - first: {x: 18, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 12
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6699,8 +6699,8 @@ Tilemap:
   - first: {x: 20, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 12
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6719,8 +6719,8 @@ Tilemap:
   - first: {x: 22, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 12
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14662,9 +14662,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 2c701603445bc76429f7ece062435b52, type: 2}
   - m_RefCount: 25
     m_Data: {fileID: 11400000, guid: 05236aa223d66ca44b163cf8f3a211a1, type: 2}
-  - m_RefCount: 24
+  - m_RefCount: 21
     m_Data: {fileID: 11400000, guid: 435867946a4a03b458859f0d8bc4a816, type: 2}
-  - m_RefCount: 17
+  - m_RefCount: 20
     m_Data: {fileID: 11400000, guid: 1523557e47720354799b84f420ce4dae, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -14691,9 +14691,9 @@ Tilemap:
     m_Data: {fileID: 7521919402563609925, guid: 0c6c2b86cac13194c9f59b18136aefe6, type: 3}
   - m_RefCount: 25
     m_Data: {fileID: -2081491529513981628, guid: 0c6c2b86cac13194c9f59b18136aefe6, type: 3}
-  - m_RefCount: 24
+  - m_RefCount: 21
     m_Data: {fileID: -4971864932216825387, guid: 0c6c2b86cac13194c9f59b18136aefe6, type: 3}
-  - m_RefCount: 17
+  - m_RefCount: 20
     m_Data: {fileID: 3185432475608348487, guid: 0c6c2b86cac13194c9f59b18136aefe6, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1435
@@ -14820,11 +14820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &666678386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2359227093606220397, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
-  m_PrefabInstance: {fileID: 891662887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &787902399 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7106209217997185630, guid: a2fca32ece664c440882a302059b9332, type: 3}
@@ -14975,7 +14970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &888420900
 PrefabInstance:
@@ -15111,6 +15106,38 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5222533937713998302, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1996162369}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488452726893932957, guid: 420b6d99fe43afc4d95a13edf58eb907, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -15458,7 +15485,7 @@ Transform:
   m_Children:
   - {fileID: 157683690}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1188890966
 PrefabInstance:
@@ -15481,7 +15508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7106209218174162641, guid: a2fca32ece664c440882a302059b9332, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7106209218174162641, guid: a2fca32ece664c440882a302059b9332, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15977,7 +16004,7 @@ RectTransform:
   m_Children:
   - {fileID: 805874243}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16243,7 +16270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bb9512ef5c96b4493f57cf31eeaf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinMenu: {fileID: 666678386}
+  WinMenu: {fileID: 0}
   enemiesCountText: {fileID: 1188890967}
 --- !u!114 &1996162372
 MonoBehaviour:
@@ -16270,5 +16297,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
